@@ -1,0 +1,26 @@
+//Read and understand code later....
+
+import java.lang.Integer;
+import java.lang.StringBuilder;
+
+public class Problem36 {
+	public static final int MAX_VALUE = 1000000;
+	
+	public static void main(String[] args) {
+		int sum = 0;
+		StringBuilder workingString;
+		StringBuilder binaryWorkingString;
+		for (int i=1; i < MAX_VALUE; i++) {
+			workingString = new StringBuilder(Integer.toString(i));
+			binaryWorkingString = new StringBuilder(Integer.toBinaryString(i));
+			if (workingString.toString().compareTo(
+workingString.reverse().toString()) == 0) {
+				if (binaryWorkingString.toString().compareTo(
+binaryWorkingString.reverse().toString()) == 0) {
+					sum += i;
+				}
+			}
+		}
+		System.out.println(sum);
+	}
+}
